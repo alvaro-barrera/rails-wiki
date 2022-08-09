@@ -1,6 +1,14 @@
 <p style="color: green"><%= notice %></p>
 
-<%= @wiki_post.title %>
+<h1><%= @wiki_post.title %></h1>
+<p>
+  <%= image_tag @wiki_post.image %>
+</p><p>
+  <%= @wiki_post.description %>
+</p>
+
+<%= render "meta", wiki_post: @wiki_post %>
+
 
 <div>
   <%= link_to "Edit this wiki post", edit_wiki_post_path(@wiki_post) %> |

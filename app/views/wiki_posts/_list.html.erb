@@ -1,0 +1,9 @@
+<div class="posts">
+  <% @wiki_posts.each do |wiki_post| %>
+    <h4><%= wiki_post.title %></h4>
+    <p>
+      <%= link_to "Show this wiki post", wiki_post_path(wiki_post), class: "wikiLink" %>
+      <%= image_tag wiki_post.image, class: "thumbnail" %>
+    </p>
+  <% end %>
+</div>
