@@ -1,5 +1,5 @@
 class WikiPostsController < ApplicationController
-  before_action :set_wiki_post, only: %i[ edit update destroy ]
+  before_action :set_wiki_post, only: %i[ show edit update destroy ]
 
   # GET /wiki_posts or /wiki_posts.json
   def index
@@ -8,6 +8,9 @@ class WikiPostsController < ApplicationController
 
   # GET /wiki_posts/1 or /wiki_posts/1.json
   def show
+  end
+
+  def example
     render "example"
   end
 
@@ -59,13 +62,14 @@ class WikiPostsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_wiki_post
-      @wiki_post = WikiPost.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def wiki_post_params
-      params.fetch(:wiki_post, {})
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_wiki_post
+    @wiki_post = WikiPost.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def wiki_post_params
+    params.fetch(:wiki_post, {})
+  end
 end
